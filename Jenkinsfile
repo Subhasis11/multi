@@ -10,17 +10,5 @@ node('built-in')
     {
         cicd.newBuild()
     }
-    stage('ContDeployment')
-    {
-        cicd.newDeploy("shared_lib","172.31.30.56","testingapp")
-    }
-    stage('ContTesting')
-    {
-         cicd.newDownload("FunctionalTesting.git")
-         cicd.runSelenium("shared_lib")
-    }
-    stage('ContDelivery')
-    {
-        cicd.newDeploy("shared_lib","172.31.31.186","productingnapp")
-    }
+    
 }
